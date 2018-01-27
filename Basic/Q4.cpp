@@ -17,17 +17,22 @@ Char 'A' takes numerical value 11 and the other characters takes the value 10. *
 
 
 //takes two integer
-int blackJack (int x, int y){
+int blackJack (int x, int y)
+{
+
 run+=x+y;
 return run;
+
 }
 
 //takes an integer and a character
-int blackJack (int x, char y){
+int blackJack (int x, char y)
+
+{
   int num;
   if (y=='A'){
     num=11;
-  }
+}
   else
   num=10;
 
@@ -36,11 +41,16 @@ int blackJack (int x, char y){
 }
 
 //takes character first and an integer
-int blackJack (char x, int y){
+int blackJack (char x, int y)
+
+{
   int num;
-  if(x=='A'){
+  if(x=='A')
+
+  {
     num=11;
   }
+  
   else
   num=10;
   run+=num+y;
@@ -48,18 +58,22 @@ int blackJack (char x, int y){
 }
 
 //takes two characters
-int blackJack (char x, char y){
+int blackJack (char x, char y)
+
+{
   int num1 = 0;
 	int num2 = 0;
 	if (x == 'A')
 	{
 		num1 = 11;
 	}
-	else
+	
+  else
   num1=10;
 
 	if (y == 'A')
-	{
+	
+  {
 		num2 = 11;
 	}
 	else
@@ -67,16 +81,21 @@ int blackJack (char x, char y){
 
 	run+=num1+num2;
 	return run;
+
 }
 
 //takes an integer
-int blackJack (int x){
+int blackJack (int x)
+
+{
   run+=x;
   return run;
 }
 
 //takes a character
-int blackJack (char x){
+int blackJack (char x)
+
+{
   int num;
   if (x == 'A')
 	{
@@ -89,7 +108,9 @@ run+=num;
 
 
 
-int main(){
+int main()
+
+{
 
   srand(time(0));
   int n1 = 1 + rand()%13;  //produces two random numbers for first double draw
@@ -97,7 +118,9 @@ int main(){
   char default1;
   char default2;
   char def;
-switch (n1){
+switch (n1)
+
+{
   case 1:
           default1='A';  //if numerical value of the draw is 1, it corresponds to A
           break;
@@ -115,7 +138,9 @@ switch (n1){
 }
 
 
-switch(n2){            //similar to different n1 value scenarios
+switch(n2)
+
+{            //similar to different n1 value scenarios
   case 1:
         default2='A';
         break;
@@ -161,47 +186,63 @@ while(run < 21) {  //while the run value is less than 21 loop continues
     cout << "Error Occured." << endl;
     return 0;
   }
-  else if (choice=='y'){
+  else if (choice=='y')
+  {
     random = 1 + rand()%13;
     if (random==1){
       def='A';
       blackJack (def);
     }
-    else if(random==11){
+    else if(random==11)
+
+    {
       def='K';
       blackJack(def);
     }
-    else if(random==12){
+
+    else if(random==12)
+
+    {
       def='Q';
       blackJack(def);
-      }
-    else if (random==13){
+    }
+    else if (random==13)
+
+    {
       def='J';
       blackJack(def);
     }
-    else{
+    else
+
+    {
      blackJack(random);
-   }
+    }
+   
    cout << "Total: " << run << endl;
+  
   }
 
-    else if (choice=='n'){ //if user picks n
+    else if (choice=='n')
+    { //if user picks n
     cout << "Total: " << run << endl;
     cout << "You quit with " << run << endl;
     return 0;
-  }
+    }
 
 }
 
-  if (run==21){  //if run equals to 21
+  if (run==21)
+  {  //if run equals to 21
      cout << "WON BLACKJACK" << endl;
      return 0;
-    }
+  }
 
-  if (run > 21){ //if run is greater than 21
+  if (run > 21)
+
+  { //if run is greater than 21
     cout << "FAILED BLACKJACK" << endl;
     return -1;
-    }
+  }
 
 
 return 0;
